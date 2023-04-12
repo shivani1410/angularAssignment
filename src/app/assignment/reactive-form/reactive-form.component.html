@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+                <div formGroupName="userData">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" formControlName="username" class="form-control" >
+                    <span class="help-block" *ngIf="!reactiveForm.get('userData.username')?.valid && reactiveForm.get('userData.username')?.touched">
+                        
+                        <span *ngIf="reactiveForm.get('userData.username')?.errors?.['nameIsForbidden']">This usename is invalid</span>
+                        <span *ngIf="reactiveForm.get('userData.username')?.errors?.['required']"> Please enter username</span>
+                       
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" formControlName="email" class="form-control">
+                    <span class="help-block" *ngIf="!reactiveForm.get('userData.email')?.valid && reactiveForm.get('userData.email')?.touched">
+                        <span *ngIf="reactiveForm.get('userData.email')?.errors?.['isForbiddenEmail']">
+                        Please enter valid email</span>
+                    </span>
+                </div></div>
+               <div class="radio" *ngFor="let gender of genders">
+                <label>
+                    <input type="radio" name="gender" formControlName="gender" [value]="gender">{{gender}}
+                </label>
+               </div>
+               <button class="btn btn-primary" type="submit" [disabled]="!reactiveForm.valid">Submit</button>
+               <div formArrayName="hobbies">
+                <h4>Your Hobbies</h4>
+                <button class="btn btn-default" type="button" (click)="onAddHobbies()">Add Hobbies</button>
+                <div class="form-group" *ngFor="let controls of getControls();let i=index">
+                    <input type="text" [formControlName]="i" class="form-control">
+                </div>
+               </div>
+            </form>
+        </div>
+    </div>
+</div>

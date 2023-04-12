@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12"> 
+           <form [formGroup]="requestForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Project Name</label>
+                <input type="text" id="name" formControlName="prjName" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="desc">Project Description</label>
+                <textarea  id="desc" formControlName="prjDesc" rows="6" class="form-control"></textarea>
+            </div>
+            <div class="col-xs-12">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+           </form>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-12">
+            <button type="button" class="btn btn-primary" (click)="onFetchData()" style="margin: 20px;">Fetch</button>
+            <button type="button" class="btn btn-danger" (click)="onClear()" style="margin: 20px;">Clear</button>
+        </div>
+        <div class="col-xs-12">
+            <h4 *ngIf="!isFetching &&  !(postList.length>=1)">No Post Found!</h4>
+            <ul class="list-group" *ngIf="!isFetching && postList.length>=1">
+                <li class="list-group-item" *ngFor="let post of postList">
+                    <h3>{{post.prjName}}</h3>
+                    <p>{{post.prjDesc}}</p>
+                </li>
+            </ul>
+            <p *ngIf="isFetching && !error">Loading...</p>
+            <div class="alert alert-danger" *ngIf="error">
+                <h2>An Error Occured</h2>
+                <p>{{error}}</p>
+            </div>
+        </div>
+        <div class="col-xs-12" >
+           
+        </div>
+    </div>
+</div>

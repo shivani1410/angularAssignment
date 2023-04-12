@@ -1,0 +1,5 @@
+<p>screen1 works!</p>
+<button class="btn btn-primary" (click)="reloadPage()">Relaod Page</button>
+<a [routerLink]="['/screen1',7]" [queryParams]="{allowEdit:'1'}" fragment="loading">Routing</a>
+
+<router-outlet></router-outlet>

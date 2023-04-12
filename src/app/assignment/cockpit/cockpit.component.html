@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-xs-12">
+        <p appBasic>Add new server or <strong appReder [defaultColor]="'cyan'" [highlightedColor]="'#e67e22'">blueprint</strong></p>
+        <p *appUnless="serverCheck">Does Server exist?</p>
+        <label>Server Name</label>
+        <!-- <input class="form-control" type="text" [(ngModel)]="serverName"/> -->
+        <input class="form-control" type="text" #serverNameRefer/>
+        <label>Server Content</label>
+        <!-- <input class="form-control" type="text" [(ngModel)]="serverContent"/> -->
+        <input class="form-control" type="text" #serverContentInput/>
+        <br/>
+        <button class="btn btn-primary " style="margin-right: 20px;" (click)="addServer(serverNameRefer)">Add Server</button>
+
+        <button class="btn btn-primary " (click)="addBlueprint(serverNameRefer)">Add Blueprint</button>
+    </div>
+    <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">VALUE is 5</p>
+        <p *ngSwitchCase="10">value is 10</p>
+        <p *ngSwitchDefault>default</p>
+    </div>
+</div>

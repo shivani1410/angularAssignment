@@ -1,0 +1,12 @@
+<div class="container">
+    <input type="text" [(ngModel)]='filterString'>
+    <hr>
+    <div class="row" *ngFor="let member of infinite|filter:filterString:'position'">
+        <div class="col-xs-8">
+            <span class="name">{{member.name | uppercase| shorten:5}}</span>
+        </div>
+        <div class="col-xs-4">
+            <span class="position">{{member.position}}</span>
+        </div>
+    </div>
+    </div>

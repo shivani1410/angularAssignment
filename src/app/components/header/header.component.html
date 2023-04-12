@@ -1,0 +1,49 @@
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            Recipe Book
+        </div>
+        <!-- <ul class="list-items">
+            <li><a href="#" class="item-link">Recipe</a></li>
+            <li><a href="#" class="item-link">Shopping List</a></li>
+        </ul>
+        <ul class="list-items list-last">
+            <li><a href="#" class="item-link item-last">Manage
+
+                <mat-icon
+                class="arrow"
+                aria-hidden="false"
+                aria-label="Downward icon"
+                fontIcon="arrow_drop_down"
+              ></mat-icon>
+            </a>
+            <ul class="dropdown">
+              
+            <li><a href="#" class="item-link">Save</a></li>
+            <li><a href="#" class="item-link">Fetch</a></li>
+            </ul>
+            
+            </li>
+        </ul> -->
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active" *ngIf="isAuthenticated"><a  routerLink="/recipes">Recipes</a></li>
+                <li routerLinkActive="active"><a routerLink="/shopping-list" >Shopping List</a></li>
+                <li routerLinkActive="active"  *ngIf="!isAuthenticated"><a routerLink="/auth" >Login</a></li>
+                <li routerLinkActive="active"  *ngIf="isAuthenticated"><a (click)="onLogout()">Logout</a></li>
+            </ul>
+            <ul class="nav navbar-nav" *ngIf="isAuthenticated">
+                <li><a (click)="saveData()" style="cursor: pointer;">Save Data</a></li>
+                <li><a (click)="fetchData()" style="cursor: pointer;">Fetch Data</a></li>
+                <!-- <li class="dropdown" appDropdown>
+
+                    <a class="dropdown-toggle" role="button">Manage</a>
+                    <ul class="dropdown-menu">
+
+                
+                    </ul>
+                </li> -->
+            </ul>
+        </div>
+    </nav>
+</header>

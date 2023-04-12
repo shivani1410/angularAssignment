@@ -1,0 +1,11 @@
+<app-game-control (startCount)="counterStarted($event)" (stopCount)="counterStopped()" ></app-game-control>
+
+    <div class="row">
+        <div *ngFor="let counter of counterList" >
+            <div  *ngIf="counter%2==0" class="col-xs-12" >
+            <app-even [evenNum]="counter"></app-even></div>
+            <div  *ngIf="counter%2==1" class="col-xs-12" >
+                <app-odd [oddNum]="counter"></app-odd></div>
+        </div>
+  
+</div>
