@@ -35,15 +35,17 @@ import { MatIconModule } from '@angular/material/icon';
 // import { ReactiveFormComponent } from './assignment/reactive-form/reactive-form.component';
 // import { ReactiveFormAssignmentComponent } from './assignment/reactive-form-assignment/reactive-form-assignment.component';
 // import { RecipeService } from './components/recipes/recipe.service';
-// import { PipeTestComponent } from './assignment/pipe-test/pipe-test.component';
-// import { ShortenPipe } from './assignment/pipe-test/shorten.pipe';
-// import { FilterPipe } from './assignment/pipe-test/filter.pipe';
+import { PipeTestComponent } from './assignment/pipe-test/pipe-test.component';
+import { ShortenPipe } from './assignment/pipe-test/shorten.pipe';
+import { FilterPipe } from './assignment/pipe-test/filter.pipe';
+import {PipePracticePipe} from './assignment/pipe-test/pipe-practice.pipe';
 import { HttpRequestsComponent } from './assignment/http-requests/http-requests.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './assignment/http-requests/auth-interceptor.service';
 import { AuthComponent } from './components/auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AlertComponent } from './shared/alert/alert.component';
+import { PromiseComponent } from './assignment/promise/promise.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,13 +74,15 @@ import { AlertComponent } from './shared/alert/alert.component';
     // TemplateFormComponent,
     // ReactiveFormComponent,
     // ReactiveFormAssignmentComponent,
-    // PipeTestComponent,
-    // ShortenPipe,
-    // FilterPipe,
+    PipeTestComponent,
+    PipePracticePipe,
+    ShortenPipe,
+    FilterPipe,
     HttpRequestsComponent,
     AuthComponent,
     LoadingSpinnerComponent,
     AlertComponent,
+    PromiseComponent,
     
     //
   ],

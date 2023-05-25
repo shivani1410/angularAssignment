@@ -1,0 +1,9 @@
+<p>promise works!</p>
+<div class="container">
+    <button class="btn btn-primary" (click)="getData()">Get Request</button>
+</div>
+<div class="row">
+    <p class="col-xs-12">
+     data:   {{(promisePipe|async)?.type}}
+    </p>
+</div>

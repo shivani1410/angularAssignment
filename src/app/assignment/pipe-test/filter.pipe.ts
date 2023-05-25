@@ -9,7 +9,7 @@ export class FilterPipe implements PipeTransform {
     if(value.length===0 || filterString.length===0){
       return value;
     }
-   const filterArray=[]
+   const filterArray:any=[]
     for(let val of value){
       console.log(val+'   '+filterString)
       if(val[property]===filterString){
